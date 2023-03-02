@@ -27,7 +27,7 @@
         * Download the zip file ![](./Screenshots/Screenshot-2023-03-02-125544.png)
 3. Extract the downloaded package to a location on your system.
 4. Go to OS(C:)
-    * Add a file called PATH_Programs ![](./Screenshots/Screenshot-2023-03-02-130006.png)
+    * Add a folder called PATH_Programs ![](./Screenshots/Screenshot-2023-03-02-130006.png)
     * Paste in these 3 executables from the *bin* folder of the zip file you extracted. ![](./Screenshots/Screenshot-2023-03-02-130227.png)
 5. Go to *Edit Environment Variables*, click *Path* then edit, and make a new variable and paste *C:\PATH_Programs*.
 6. To test if everything is installed correctly, go to *Powershell* and type in `ffmpeg` and this is what it should look like ![](./Screenshots/Screenshot-2023-03-02-130845.png)
