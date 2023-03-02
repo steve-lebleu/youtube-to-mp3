@@ -37,10 +37,10 @@
 * Name the output file name to whatever you want.
 * Then run `node server.js` in the terminal and watch the magic happen!
 * *Must have Node and npm installed.*
+* Also please credit me if you're going to use this.
 
 ## Made With
 
 * Node.JS
 * FFmpeg
 * ytdl-core
-"# YouTube-To-MP3-Converter" 
