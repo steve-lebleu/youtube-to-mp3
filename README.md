@@ -17,7 +17,7 @@
 
 ## Disclaimer
 
-⚠ Only download music that you have permission to. Sources such as NoCopyrightSounds, and Creative Commons sources are a few examples of places where you are allowed to use this.
+⚠ Only download music that you have permission to. Sources such as [NoCopyrightSounds](https://www.youtube.com/@NoCopyrightSounds), and Creative Commons sources are a few examples of places where you are allowed to use this.
 
 ## Instructions
 
