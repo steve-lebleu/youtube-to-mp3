@@ -1,13 +1,15 @@
 ﻿# YouTube To MP3 Converter
 
-## Index
-- [Overview](#overview)
-  - [Summary](#summary)
-  - [Disclaimer](#disclaimer)
-  - [Instructions](#instructions)
-  - [Made With](#made-with)
+Forked from [YouTube-To-MP3](https://github.com/The-D-Team/YouTube-To-MP3) cause of issues with ytdl-core.
 
-# Overview
+## Index
+
+- [Overview](#overview)
+- [Summary](#summary)
+- [Disclaimer](#disclaimer)
+- [Instructions](#instructions)
+
+## Overview
 
 ⚡ A simple Node.JS YouTube to MP3 converter!
 
@@ -21,26 +23,43 @@
 
 ## Instructions
 
-1. Go to the FFmpeg download page at https://ffmpeg.org/download.html.
+1. Go to the [FFmpeg download page](https://ffmpeg.org/download.html).
 2. Download the appropriate package for your operating system.
-    * For Windows, I downloaded *Windows builds from gyan.dev*
-        * Download the zip file ![](./Screenshots/Screenshot-2023-03-02-125544.png)
 3. Extract the downloaded package to a location on your system.
-4. Go to OS(C:)
-    * Add a folder called PATH_Programs ![](./Screenshots/Screenshot-2023-03-02-130006.png)
-    * Paste in these 3 executables from the *bin* folder of the zip file you extracted. ![](./Screenshots/Screenshot-2023-03-02-130227.png)
-5. Go to *Edit Environment Variables*, click *Path* then edit, and make a new variable and paste *C:\PATH_Programs*.
-6. To test if everything is installed correctly, go to *Powershell* and type in `ffmpeg` and this is what it should look like ![](./Screenshots/Screenshot-2023-03-02-130845.png)
+4. Put the binaries where you want them to be.
+5. Add the path to the binaries to your system PATH.
+6. To test if everything is installed correctly, go to terminal and type in `ffmpeg -version`, you should see something confirming the installation.
+7. Install Node.js and npm and just `npm install` to install the dependencies.
 
-* Audios are saved in the [Music](./Music) folder.
-* Go to the *server.js* file and copy and paste the YouTube music url ID.
-* Name the output file name to whatever you want.
-* Then run `node server.js` in the terminal and watch the magic happen!
-* *Must have Node and npm installed.* [NodeJS Download](https://nodejs.org/en/download/)
-* Also please credit me if you're going to use this.
+Open the *server.js* file in your favorite IDE.
 
-## Made With
+Define the output path and format.
 
-* Node.JS
-* FFmpeg
-* ytdl-core
+```javascript
+const outputDir = 'Music';
+const outputFormat = 'mp3';
+```
+
+Copy / paste the YouTube music url in the `downloads` array. Define the output file name in the `output` property.
+
+```javascript
+const downloads = [
+  {
+    url: 'https://www.youtube.com/watch?v=[VIDEO_ID]',
+    output: 'So good'
+  },
+  {
+    url: 'https://www.youtube.com/watch?v=[VIDEO_ID]',
+    output: 'My awesome song'
+  },
+  ...
+];
+```
+
+Run the script.
+
+```bash
+node server.js
+```
+
+Enjoy your downloads!

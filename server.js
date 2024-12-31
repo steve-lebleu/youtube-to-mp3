@@ -1,29 +1,44 @@
-const ytdl = require('ytdl-core');
-const ffmpeg = require('fluent-ffmpeg');
+const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-// Set the video ID and output file name
-const videoId = 'TW9d8vYrVFQ';
+const ffmpeg = require('fluent-ffmpeg');
+
+// Set the output directory and file name
 const outputDir = 'Music';
-const outputFile = path.join(outputDir, 'ELEKTRONOMIA_SKYHIGH.mp3'); // Name the mp3 file whatever you want
+const outputFormat = 'mp3';
 
-// Get the audio stream using ytdl-core
-const stream = ytdl(videoId, { filter: 'audioonly' });
+// Set the downloads array
+const downloads = [
+  {
+    url: 'https://www.youtube.com/watch?v=0e5zm20IEjA',
+    output: 'The Blessed Madonna, Joy Anonymous, Danielle Ponder - Carry Me Higher'
+  },
+  {
+    url: 'https://www.youtube.com/watch?v=0e5zm20IEjA',
+    output: 'The Blessed Madonna, Joy Anonymous, Danielle Ponder - Carry Me Higher (Extended Mix)'
+  }
+];
 
-// Pipe the audio stream to FFmpeg to convert to MP3 format
-ffmpeg(stream)
-    .toFormat('mp3')
-    .on('error', (err) => {
-        console.error('An error occurred:', err.message);
-    })
-    .on('end', () => {
-        console.log('Finished converting to MP3 format.');
-    })
-    .pipe(fs.createWriteStream(outputFile))
-    .on('error', (err) => {
-        console.error('An error occurred while saving the file:', err.message);
-    })
-    .on('finish', () => {
+downloads
+  .forEach(download => {
+    // Spawn yt-dlp
+    const stream = spawn('C:\\Program Files\\YTDLP\\yt-dlp.exe', ['-f', 'bestaudio', '-o', '-', download.url], { stdio: ['ignore', 'pipe', 'ignore'] });
+
+    // Pipe the audio stream to FFmpeg to convert to MP3 format
+    ffmpeg(stream.stdout)
+      .format(outputFormat)
+      .on('start', (err) => {
+        console.log(`Starting conversion for "${download.output}"`);
+      })
+      .on('end', () => {
+        console.log(`Finished converting "${download.output}" to MP3 format.`);
+      })
+      .pipe(fs.createWriteStream(path.join(outputDir, `${download.output}.${outputFormat}`)))
+      .on('error', (err) => {
+        console.error(`An error occurred while saving the file "${download.output}":`, err.message);
+      })
+      .on('finish', () => {
         console.log('File saved successfully.');
-    });
+      });
+  });
