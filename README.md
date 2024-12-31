@@ -1,6 +1,6 @@
 ﻿# YouTube To MP3 Converter
 
-Forked from [YouTube-To-MP3](https://github.com/The-D-Team/YouTube-To-MP3) cause of issues with ytdl-core.
+Forked from [YouTube-To-MP3](https://github.com/The-D-Team/YouTube-To-MP3).
 
 ## Index
 
@@ -16,10 +16,6 @@ Forked from [YouTube-To-MP3](https://github.com/The-D-Team/YouTube-To-MP3) cause
 ## Summary
 
 💻 Users can use an IDE like IntelliJ to convert YouTube videos to mp3 files without having to rely on 3rd party websites.
-
-## Disclaimer
-
-⚠ Only download music that you have permission to. Sources such as [NoCopyrightSounds](https://www.youtube.com/@NoCopyrightSounds), and Creative Commons sources are a few examples of places where you are allowed to use this.
 
 ## Instructions
 
@@ -62,4 +58,8 @@ Run the script.
 node server.js
 ```
 
-Enjoy your downloads!
+Enjoy.
+
+## Disclaimer
+
+⚠ Only download music that you have permission to. Sources such as [NoCopyrightSounds](https://www.youtube.com/@NoCopyrightSounds), and Creative Commons sources are a few examples of places where you are allowed to use this.

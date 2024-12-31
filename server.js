@@ -4,6 +4,11 @@ const path = require('path');
 
 const ffmpeg = require('fluent-ffmpeg');
 
+// ------------------------------ Configuration ------------------------------
+
+// Set the executable path to the yt-dlp executable OR 'yt-dlp' if it's in the PATH
+const executablePath = 'C:\\Program Files\\YTDLP\\yt-dlp.exe';
+
 // Set the output directory and file name
 const outputDir = 'Music';
 const outputFormat = 'mp3';
@@ -20,10 +25,12 @@ const downloads = [
   }
 ];
 
+// ------------------------------ Script ------------------------------
+
 downloads
-  .forEach(download => {
+  .forEach((download) => {
     // Spawn yt-dlp
-    const stream = spawn('C:\\Program Files\\YTDLP\\yt-dlp.exe', ['-f', 'bestaudio', '-o', '-', download.url], { stdio: ['ignore', 'pipe', 'ignore'] });
+    const stream = spawn(executablePath, ['-f', 'bestaudio', '-o', '-', download.url], { stdio: ['ignore', 'pipe', 'ignore'] });
 
     // Pipe the audio stream to FFmpeg to convert to MP3 format
     ffmpeg(stream.stdout)
