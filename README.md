@@ -24,19 +24,24 @@ Forked from [YouTube-To-MP3](https://github.com/The-D-Team/YouTube-To-MP3).
 3. Extract the downloaded package to a location on your system.
 4. Put the binaries where you want them to be.
 5. Add the path to the binaries to your system PATH.
-6. To test if everything is installed correctly, go to terminal and type in `ffmpeg -version`, you should see something confirming the installation.
-7. Install Node.js and npm and just `npm install` to install the dependencies.
+6. Go to terminal and type in `ffmpeg -version`, you should see something confirming the installation.
+7. Download the [yt-dlp](https://github.com/yt-dlp/yt-dlp) executable.
+8. Put the executable where you want it to be.
+9. Add the path to the executable to your system PATH.
+10. Go to terminal and type in `yt-dlp --version`, you should see something like a version number.
+11. Install Node.js and NPM.
+12. Run `npm install` to install the dependencies.
 
 Open the *server.js* file in your favorite IDE.
 
 Define the output path and format.
 
 ```javascript
-const outputDir = 'Music';
+const outputDir = 'downloads';
 const outputFormat = 'mp3';
 ```
 
-Copy / paste the YouTube music url in the `downloads` array. Define the output file name in the `output` property.
+Copy / paste the YouTube music url's in the `downloads` array. Define the output file name in the `output` property.
 
 ```javascript
 const downloads = [
