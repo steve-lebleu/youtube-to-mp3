@@ -16,8 +16,8 @@ const outputFormat = 'mp3';
 // Set the downloads array
 const downloads = [
   {
-    url: 'https://www.youtube.com/watch?v=[VIDEO_ID]',
-    output: '[OUTPUT_NAME]'
+    url: 'https://www.youtube.com/watch?v=a83iBWVcp8I',
+    output: 'Steve Rachmad pres. Ignacio - Virton Upgraded'
   },
 ];
 
